@@ -1,0 +1,69 @@
+tmp_wildcard.ww = 100;
+tmp_wildcard.wh = 100;
+tmp_wildcard.wx = 100;
+tmp_wildcard.wy = 100;
+tmp_wildcard.wz = 0;
+tmp_wildcard.act_wx = 0;
+tmp_wildcard.act_wy = 0;
+tmp_wildcard.act_anim = 1;
+tmp_wildcard.hover_icon_wx = 0;
+tmp_wildcard.hover_icon_wy = 0;
+tmp_wildcard.animcycle_id = "null";
+tmp_wildcard.notice_icon_animcycle_id = "null";
+tmp_wildcard.hover_cursor_animcycle_id = "null";
+tmp_wildcard.hover_icon_animcycle_id = "null";
+tmp_wildcard.audio_id = "null";
+tmp_wildcard.deck_animcycle_ids = [];
+tmp_wildcard.notifications_persistent = 0;
+tmp_wildcard.raw_notifications = [
+];
+tmp_wildcard.notification_reqs = [[
+]];
+tmp_wildcard.notice_reqs = [[
+]];
+tmp_wildcard.reqs = [[
+]];
+
+//view
+{
+  var self = tmp_wildcard;
+
+  self.consume_self = function(wildcard)
+  {
+    self = wildcard;
+  }
+
+  self.dismiss = function()
+  {
+  }
+
+  self.dragStart = function(evt)
+  {
+  };
+  self.drag = function(evt)
+  {
+  };
+  self.dragFinish = function()
+  {
+  };
+
+  self.hover = function(evt)
+  {
+  }
+  self.unhover = function(evt)
+  {
+  }
+
+  self.click = function(evt)
+  {
+  }
+
+  self.tick = function()
+  {
+  }
+
+  self.draw = function(t)
+  {
+  }
+}
+

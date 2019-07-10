@@ -1,0 +1,25 @@
+// This gets prepended to compiled data
+
+var levels = [];
+
+var tmp_animcycle;
+var tmp_audio;
+var tmp_entry;
+var tmp_level;
+var tmp_scene;
+var tmp_room;
+var tmp_cutscene;
+var tmp_person;
+var tmp_speak;
+var tmp_option;
+var tmp_object;
+var tmp_observation;
+var tmp_view;
+var tmp_zone;
+var tmp_porthole;
+var tmp_wildcard;
+var tmp_inert;
+
+var init_levels = function()
+{
+

@@ -1,0 +1,47 @@
+// This gets appended to compiled data
+
+  for(var i = 0; i < levels.length; i++)
+  {
+    tmp_level = levels[i];
+    for(var j = 0; j < tmp_level.scenes.length; j++)
+    {
+      tmp_scene = tmp_level.scenes[j];
+      for(var k = 0; k < tmp_scene.rooms.length; k++)
+      {
+        tmp_room = tmp_scene.rooms[k];
+        tmp_room.nav_min_wz_wy = -99999;
+        tmp_room.nav_max_wz_wy =  99999;
+        for(var l = 0; l < tmp_room.navs.length; l++)
+        {
+          var tmp_nav = tmp_room.navs[l]
+          if(tmp_nav.wy+tmp_nav.wh/2 > tmp_room.nav_min_wz_wy) tmp_room.nav_min_wz_wy = tmp_nav.wy+tmp_nav.wh/2;
+          if(tmp_nav.wy-tmp_nav.wh/2 < tmp_room.nav_max_wz_wy) tmp_room.nav_max_wz_wy = tmp_nav.wy-tmp_nav.wh/2;
+        }
+        for(var l = 0; l < tmp_room.portholes.length; l++)
+        {
+          tmp_porthole = tmp_room.portholes[l];
+          var id = tmp_scene.fqid+"."+tmp_porthole.target_room;
+          var target_room = find(id);
+          tmp_porthole.target_room_found = target_room;
+          if(target_room) target_room.entry_portholes_found.push(tmp_porthole);
+        }
+        for(var l = 0; l < tmp_room.persons.length; l++)
+        {
+          tmp_person = tmp_room.persons[l];
+          for(var m = 0; m < tmp_person.speaks.length; m++)
+          {
+            tmp_speak = tmp_person.speaks[m];
+            for(var n = 0; n < tmp_speak.options.length; n++)
+            {
+              tmp_option = tmp_speak.options[n];
+              var id = tmp_person.fqid+"."+tmp_option.target_speak;
+              var target_speak = find(id);
+              tmp_option.target_speak_found = target_speak;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
